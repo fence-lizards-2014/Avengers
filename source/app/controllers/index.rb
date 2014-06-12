@@ -1,5 +1,5 @@
 get '/' do
-  erb :surveys
+  erb :index
 end
 
 get '/survey/:id' do
