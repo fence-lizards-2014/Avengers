@@ -86,22 +86,23 @@ get '/surveys' do
   erb :surveys_all
 end
 
-post '/user/:id/survey' do
-  redirect ''
+post '/surveys/create' do
+  @new_survey = Survey.create(title: params[:survey])
+  erb :survey_edit
 end
 
-get 'user/:id' do
-end
 
+post '/surveys/:id/edit' do
 
-post '/surveys' do
-  p params
-  @survey_name = params[:survey]
-  @question = params[:question]
-  Survey.create(title: params['survey'])
-  Question.create(text: params['question'])
+  @question = Question.create(survey_id: params[:id], text: params['question1'])
 
-  {survey: @survey_name, question: @question}.to_json
+  params[:question].values.each do |choice|
+    variable = Choice.create(question_id: @question.id, text: choice)
+  end
+
+  redirect '/'
+
+  # {survey: @survey_name, question: @question}.to_json
   # something.each do |var
   #   Choice.create(text: params['choice'])
   # end
