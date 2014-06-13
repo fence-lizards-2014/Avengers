@@ -7,7 +7,7 @@ end
 
 get '/sessions/new' do
   # render sign-in page
-  erb :sign_in 
+  erb :sign_in
 end
 
 post '/sessions' do
@@ -21,7 +21,7 @@ post '/sessions' do
 end
 
 delete '/sessions/:id' do
-  # sign-out -- invoked 
+  # sign-out -- invoked
   session[:id] = 0
   redirect '/'
 end
@@ -44,8 +44,14 @@ end
 
 #----------- Survey ----------
 
-get '/survey/:id' do
+get '/surveys/:id' do
+  @survey = Survey.find_by_id(params[:id])
+  erb :survey
 end
+
+get '/surveys' do
+  @surveys = Survey.all
+  erb :surveys_all
 
 post '/user/:id/survey' do
   redirect ''
