@@ -1,11 +1,125 @@
+/* GENERAL STYLES */
+@font-face {
+  font-family: 'Cute';
+  src: url('/fonts/Cute Cartoon.ttf');
+}
+
 body {
   counter-reset:section;
   background-color: #F6F6EF;
-  font-family: Verdana;
-  max-width: 700px;
+  font-family:"HelveticaNeue", "Helvetica Neue", sans-serif;
+  font-size: 0.85em;
+  margin: 0 auto;
+  color: #A63207;
+  line-height: 2em;
+}
+
+.main {
+  max-width: 85%;
   margin: 0 auto;
 }
 
+.container {
+  margin: 20px auto;
+  width: 45%;
+  padding: 0px 20px 20px 20px;
+  border: 1px dashed #A63207;
+  border-radius: 15px;
+}
+
+/* BODY TEXT STYLES */
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* FORM STYLES */
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid #FFB97F;
+  display: block;
+  background-color: #FFDFC5;
+  width: 100%;
+}
+
+
+/* NAV STYLES */
+nav form {
+  width: 100%;
+}
+
+nav {
+  background-color: #A63207;
+}
+
+nav .brand {
+  margin-left: 4em;
+  display: inline;
+}
+
+nav .brand a {
+  color: #000000;
+  font-family: 'Cute';
+  text-decoration: none;
+  font-size: 5em;
+  line-height: 1.25em;
+}
+
+nav ul {
+  float: right;
+  text-align: right;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 2em;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.25em;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* BODY HEADER STYLES */
+h1, h2 {
+  background-color: #FFB550;
+  font-size: 2em;
+  text-align: center;
+  font-weight: normal;
+  border-radius: 10px;
+  color: #A63207;
+  padding: 1%;
+}
+
+h3, h4 {
+  background-color: #FFB296;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: normal;
+  border-radius: 10px;
+  color: #A63207;
+  padding: 0.5%;
+}
+
+
+
+/* NOT SURE WHERE THIS IS FROM */
+/*
 header {
   background-color: #F4712D;
   padding: 5px 5px;
@@ -117,11 +231,4 @@ form#posts input[type='submit'] {
   background-color: #F4712D;
 
 
-}
-
-.container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
+}*/

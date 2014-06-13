@@ -1,18 +1,20 @@
-<h2>Survey Result</h2>
+<div class="container">
+  <h2>Survey Result</h2>
 
-<h3>ID: <%= @survey.id %></h3>
-<h4>Title: <%= @survey.title %></h4>
-<ol>
-    <% @survey.questions.each do |question| %>
-      <li><%= question.text %>
-        <ol type="a">
-          <% question.choices.each do |choice| %>
-            <li>
-              <%= choice.text %>: <%= choice.responses.length %>
-            </li>
-          <% end %>
-        </ol>
-        <br>
-      </li>
-    <% end %>
-</ol>
+  <h3>ID: <%= @survey.id %></h3>
+  <h4>Title: <%= @survey.title %></h4>
+  <ol>
+      <% @survey.questions.each do |question| %>
+        <li><%= question.text %>
+          <ol type="a">
+            <% question.choices.each do |choice| %>
+              <li>
+                <%= choice.text %>: <%= choice.responses.length %>
+              </li>
+            <% end %>
+          </ol>
+          <br>
+        </li>
+      <% end %>
+  </ol>
+</div>
