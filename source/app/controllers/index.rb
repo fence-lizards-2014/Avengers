@@ -1,5 +1,6 @@
 get '/' do
 	@user = current_user
+  @surveys = Survey.all
   erb :index
 end
 
@@ -52,6 +53,7 @@ end
 get '/surveys' do
   @surveys = Survey.all
   erb :surveys_all
+end
 
 post '/user/:id/survey' do
   redirect ''
