@@ -1,7 +1,7 @@
-<h2>All Surveys</h2>
+<h2>Surveys You Haven't Taken Yet</h2>
 
 <ul>
-  <% @surveys.each do |item| %>
+  <% @not_taken_surveys.each do |item| %>
     <li><a href="/surveys/<%= item.id %>"><%= item.title %></a> | <%= item.created_at.strftime('%b %d %G') %></li>
   <% end %>
 </ul>

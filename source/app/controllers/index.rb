@@ -1,6 +1,21 @@
 get '/' do
 	@user = current_user
   @surveys = Survey.all
+  if current_user
+    responses = Response.where(user_id: @user.id)
+    taken_surveys = responses.map do |response|
+      choice = Choice.find_by_id(response.choice_id)
+      question = Question.find_by_id(choice.question_id)
+      Survey.find_by_id(question.survey_id)
+    end
+
+    @not_taken_surveys = @surveys - taken_surveys.uniq
+    @taken_surveys = taken_surveys.uniq
+  else
+    @not_taken_surveys = Survey.all
+    @taken_surveys = []
+  end
+
   erb :index
 end
 
@@ -48,6 +63,22 @@ end
 get '/surveys/:id' do
   @survey = Survey.find_by_id(params[:id])
   erb :survey
+end
+
+get '/surveys/:id/results' do
+  @survey = Survey.find_by_id(params[:id])
+  erb :survey_id_results
+end
+
+post '/surveys/:id/results' do
+  answers = params[:question]
+  id = session[:id]
+
+  answers.each do |key, value|
+    Response.create(user_id: id, choice_id: value)
+  end
+
+  redirect '/'
 end
 
 get '/surveys' do

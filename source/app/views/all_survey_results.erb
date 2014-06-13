@@ -1,0 +1,7 @@
+<h2>Survey Results</h2>
+
+<ul>
+  <% @taken_surveys.each do |item| %>
+    <li><a href="/surveys/<%= item.id %>/results"><%= item.title %></a> | <%= item.created_at.strftime('%b %d %G') %></li>
+  <% end %>
+</ul>
