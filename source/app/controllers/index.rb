@@ -3,11 +3,7 @@ get '/' do
   @surveys = Survey.all
   if current_user
     responses = Response.where(user_id: @user.id)
-    taken_surveys = responses.map do |response|
-      choice = Choice.find_by_id(response.choice_id)
-      question = Question.find_by_id(choice.question_id)
-      Survey.find_by_id(question.survey_id)
-    end
+    taken_surveys = find_taken_surveys(responses)
 
     @not_taken_surveys = @surveys - taken_surveys.uniq
     @taken_surveys = taken_surveys.uniq
