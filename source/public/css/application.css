@@ -83,16 +83,18 @@ nav ul li {
   list-style-type: none;
   display: inline;
   margin-right: 2em;
+  border-radius: 5px;
+  border: 1px solid #FFB97F;
+  background-color: #FFDFC5;
+  padding: 2% 0%;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #000000;
-  font-size: 1.25em;
+  color: #A63207;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* BODY HEADER STYLES */

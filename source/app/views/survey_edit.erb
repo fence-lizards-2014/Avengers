@@ -1,14 +1,16 @@
-<h2>SurveyName: <%= @new_survey.title %></h2>
+<div class="container">
+  <h2>SurveyName: <%= @new_survey.title %></h2>
 
-<form class= 'create_form' action="/surveys/<%= @new_survey.id %>/edit" method="POST">
-  <ul class="question_block">
-    <li>Question: <input type="text" name="question1"></li>
-      <ul class="choice_block">
-        <li>Choice: <input type="text" name="question[choice1]"></li>
-        <li>Choice: <input type="text" name="question[choice2]"></li>
-        <li>Choice: <input type="text" name="question[choice3]"></li>
-      </ul>
-  </ul>
+  <form class= 'create_form' action="/surveys/<%= @new_survey.id %>/edit" method="POST">
+    <ul class="question_block">
+      <li>Question: <input type="text" name="question1"></li>
+        <ul class="choice_block">
+          <li>Choice: <input type="text" name="question[choice1]"></li>
+          <li>Choice: <input type="text" name="question[choice2]"></li>
+          <li>Choice: <input type="text" name="question[choice3]"></li>
+        </ul>
+    </ul>
 
-  <input class="survey_submit" type="submit" value="Submit">
-</form>
+    <input class="survey_submit" type="submit" value="Submit">
+  </form>
+</div>
