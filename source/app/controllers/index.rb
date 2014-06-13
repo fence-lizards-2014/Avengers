@@ -2,7 +2,15 @@ get '/' do
   erb :index
 end
 
-get '/survey/:id' do
+get '/surveys/:id' do
+  @survey = Survey.find(params[:id])
+  @questions = Question.where(survey_id: params[:id])
+  erb :survey
+end
+
+get '/surveys' do
+  @surveys = Survey.all
+  erb :surveys_all
 end
 
 post '/user/:id/survey' do
