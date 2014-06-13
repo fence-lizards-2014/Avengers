@@ -1,20 +1,21 @@
-function pushSurvey(){
+// function pushSurvey(){
 
-  event.preventDefault();
+//   event.preventDefault();
 
-  $.ajax({
-    url: '/surveys',
-    type: 'POST',
-    dataType: "json",
-    data: $('.create_form').serialize()
-  }).done(function() {
+//   $.ajax({
+//     url: '/surveys',
+//     type: 'POST',
+//     dataType: "json",
+//     data: $('.create_form').serialize()
+//   }).done(function() {
+//     console.log()
 
-  });
+//   });
 
-};
+// };
 
 
-$(document).ready(function() {
-  $('.survey_submit').on('click', pushSurvey)
+// $(document).ready(function() {
+//   $('.survey_submit').on('click', pushSurvey)
 
-});
+// });
