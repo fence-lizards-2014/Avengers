@@ -3,8 +3,7 @@ get '/' do
 end
 
 get '/surveys/:id' do
-  @survey = Survey.find(params[:id])
-  @questions = Question.where(survey_id: params[:id])
+  @survey = Survey.find_by_id(params[:id])
   erb :survey
 end
 
