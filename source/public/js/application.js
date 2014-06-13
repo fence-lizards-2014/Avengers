@@ -1,7 +1,20 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+function pushSurvey(){
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  event.preventDefault();
+
+  $.ajax({
+    url: '/surveys',
+    type: 'POST',
+    dataType: "json",
+    data: $('.create_form').serialize()
+  }).done(function() {
+
+  });
+
+};
+
+
+$(document).ready(function() {
+  $('.survey_submit').on('click', pushSurvey)
+
 });

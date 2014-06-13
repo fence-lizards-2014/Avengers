@@ -56,6 +56,10 @@ end
 
 #----------- Survey ----------
 
+get '/surveys/create' do
+  erb :create_survey
+end
+
 get '/surveys/:id' do
   @survey = Survey.find_by_id(params[:id])
   erb :survey
@@ -87,4 +91,21 @@ post '/user/:id/survey' do
 end
 
 get 'user/:id' do
+end
+
+
+post '/surveys' do
+  p params
+  @survey_name = params[:survey]
+  @question = params[:question]
+  Survey.create(title: params['survey'])
+  Question.create(text: params['question'])
+
+  {survey: @survey_name, question: @question}.to_json
+  # something.each do |var
+  #   Choice.create(text: params['choice'])
+  # end
+  # p @@survey_name
+  # p @question
+  # p @choice
 end
